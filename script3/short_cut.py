@@ -49,9 +49,14 @@ def createSymbolicLink():
 def deleteSymbolicLink():
     os.system("clear")
     name = input("Enter the file name: ")
-    #if file not existed or not found, return a message
+    link = Path(f"{str(Path.home())}/{name}")
+    if not link.is_symlink():
+        print(f"{link} doesn't exist or is not a symbolic link.")
+        return
     #deletes the symbolic file for the specified file
+    link.unlink()
     print(f"symbolic link deleted for {name}")
+
     
 
 def symbolicLinkReport():
