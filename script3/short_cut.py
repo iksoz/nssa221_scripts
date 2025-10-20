@@ -21,7 +21,7 @@ def createSymbolicLink():
     if len(matches)>1:
         index = 0
         for match in matches:
-            print(index,match)
+            print(index,match[index])
             index+=1
     elif not matches:
         print("File doesn't exist")
