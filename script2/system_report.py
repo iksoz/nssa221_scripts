@@ -1,5 +1,5 @@
 import os,platform,subprocess,re,glob,datetime
-
+#Zifeng Li, 10/16/2025
 # Translates numbes to their corresponding months
 NUM_TO_MONTH = {
     "1"  : "January",
@@ -64,25 +64,6 @@ def get_host_ip():
     result = subprocess.run(cmd, capture_output=True, text=True)
     return result.stdout.strip()
 
-
-    # Ignore all of this
-    # cmd = ["ifconfig"]
-    # ifconfig_rt = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-
-    # cmd = ["egrep", "inet "]
-    # egrep_rt = subprocess.run(cmd, stdin=ifconfig_rt.stdout, text=True, capture_output=True)
-
-    # ip_addrs = egrep_rt.stdout.strip().split("\n")
-    # i = 0
-    # while i < len(ip_addrs):
-    #     ip_addrs[i] = ip_addrs[i].strip()
-    #     ip_addrs[i] = ip_addrs[i].split()[1]
-    #     i += 1
-    # for ip_addr in ip_addrs:
-    #     # return the first none loop back ip address
-    #     if (ip_addr != "127.0.0.1"):
-    #         return ip_addr
-    
 def get_default_gateway():
     """
     Gets the user default gateway
@@ -270,6 +251,7 @@ def main():
     print_processor_info()
 
     print_memory_info()
+
 
 if __name__ == "__main__":
     main()

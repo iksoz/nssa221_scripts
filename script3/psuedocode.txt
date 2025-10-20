@@ -1,0 +1,9 @@
+createSymbolicLink:
+outputs the content of everything into a text file using ls -R > text.txt
+regex find all that matches the input name of file
+if file doesn't exist, informs the user and stops the function
+else if the function does exist, establish the link and stops
+
+deleteSymbolicLink:
+
+createSymbolicLinkReport:
