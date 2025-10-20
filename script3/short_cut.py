@@ -21,7 +21,7 @@ def createSymbolicLink():
     if len(matches)>1:
         index = 0
         for match in matches:
-            print(index,match[index])
+            print(index,match)
             index+=1
         try:
             choice = int(input("Which file do you want to creata symbolic link for(index): "))
