@@ -6,8 +6,8 @@ def menu():
     print("[2] Delete a symbolic link")
     print("[3] Create symbolic link report")
     print("[Q] Quit")
-def findPath():
-    pass
+# def findPath():
+#     pass
 def createSymbolicLink():
     os.system("clear")
     name = input("Enter the file name: ")
@@ -61,6 +61,17 @@ def deleteSymbolicLink():
 
 def symbolicLinkReport():
     os.system("clear")
+    #requirement: #of links, links and their target paths
+    os.chdir(Path.home())
+    cmd = ["find", ".", "-type", "l", "-printf", "link:%p -> target:%l\n"]
+    process = subprocess.run(cmd,text=True, capture_output=True, check=True)#formats all symbolic links into a file
+    # Print lines and show count
+    lines = [line for line in process.stdout.splitlines() if line.strip()]
+    for line in lines:
+        print(line)
+    print(f"\nTotal count of symbolic links: {len(lines)}")
+
+
 
 
 
