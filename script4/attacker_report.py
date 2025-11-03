@@ -26,7 +26,7 @@ def report_gen():
     #searches for the country associated with the ip
     ip_counter_country = []
     for ip,counter in count.items():
-        countryFound = geolite2.lookup(ip).country
+        countryFound = geolite2.lookup(ip)
         if countryFound:
             ip_counter_country += [counter,ip,countryFound]
 
