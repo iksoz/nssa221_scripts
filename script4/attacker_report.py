@@ -39,7 +39,7 @@ def report_gen():
     print("COUNT","\tIP ADDRESS","\tCOUNTRY",sep="")
 
     for i in ip_counter_country:
-        print(i[0],'\t',i[1],'\t',i[2])
+        print(f"{i[0]:<7} {i[1]:<18} {i[2]}")
 
 def main():
     os.system("clear")
