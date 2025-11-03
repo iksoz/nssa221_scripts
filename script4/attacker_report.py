@@ -9,7 +9,7 @@ def report_gen():
     os.chdir(Path.home())
     os.chdir("student")
     stdoutput = subprocess.run(["pwd"],text=True,capture_output=True)
-    print(stdoutput)
+    print(stdoutput.stdout)
 
 def main():
     os.system("clear")
