@@ -22,10 +22,10 @@ def report_gen():
         for ip in matching:#add all ips found in the line into a stored set and dictionary
             ips.add(ip)
             count[ip] = count.get(ip,0) + 1
-
     syslog.close()  
 
-    print(count)
+    for ip,counter in count.items:
+        print(ip,counter)
 
 def main():
     os.system("clear")
