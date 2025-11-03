@@ -12,7 +12,7 @@ def report_gen():
     syslog = open("syslog.log")
     ips = []
     for line in syslog:
-        part = line.split("")
+        part = line.split(" ")
         matching = re.findall(r"(?:\d{1,3}\.){3}\d{1,3}",line)
         if matching not in ips:
             ips+= matching
