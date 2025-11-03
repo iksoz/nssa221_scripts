@@ -7,7 +7,7 @@ from pathlib import Path
 
 def report_gen():
     os.chdir(Path.home())
-    os.chdir("/student")
+    os.chdir("student")
     stdoutput = subprocess.run(["pwd"],text=True,capture_output=True)
     print(stdoutput)
 
