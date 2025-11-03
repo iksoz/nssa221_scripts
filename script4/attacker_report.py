@@ -28,12 +28,12 @@ def report_gen():
     for ip,counter in count.items():
         country = geolite2.lookup(ip)
         if country:
-            ip_counter_country += [counter,'\t',ip,'\t',country]
+            ip_counter_country += [counter,ip,country]
 
     #format report
     print("COUNT","\tIP ADDRESS","\tCOUNTRY")
     for i in ip_counter_country:
-        print(i)
+        print(i[0],i[1],i[2],sep='\t')
 
 def main():
     os.system("clear")
