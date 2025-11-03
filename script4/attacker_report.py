@@ -24,7 +24,7 @@ def report_gen():
             count[ip] = count.get(ip,0) + 1
     syslog.close()  
 
-    print("COUNT","\t\t\tIP ADDRESS","\tCOUNTRY")
+    print("COUNT","\t\tIP ADDRESS","\tCOUNTRY")
     for counter,ip in count.items():
         print(counter,'\t',ip)
 
