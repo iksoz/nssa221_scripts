@@ -8,7 +8,6 @@ from geoip import geolite2
 def report_gen():
     #locates and opens the syslog file
     os.chdir(Path.home())
-    os.chdir("student")
     syslog = open("syslog.log")
 
     count = {}
