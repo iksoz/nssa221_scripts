@@ -33,7 +33,7 @@ def report_gen():
     #format report
     print("COUNT","\tIP ADDRESS","\tCOUNTRY")
     for i in ip_counter_country:
-        print(i[0],i[1],i[2],sep='\t')
+        print(i[0])
 
 def main():
     os.system("clear")
