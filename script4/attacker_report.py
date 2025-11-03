@@ -24,12 +24,16 @@ def report_gen():
     syslog.close()  
 
     #searches for the country associated with the ip
-    #for ip in 
+    ip_counter_country = []
+    for ip,counter in count.items():
+        country = geolite2.lookip(ip)
+        if country:
+            ip_counter_country += [count,'\t',ip,'\t',country]
 
     #format report
-    print("COUNT","\t\tIP ADDRESS","\tCOUNTRY")
-    for ip,counter in count.items():
-        print(counter,'\t',ip)
+    print("COUNT","\tIP ADDRESS","\tCOUNTRY")
+    for i in ip_counter_country:
+        print(i)
 
 def main():
     os.system("clear")
