@@ -10,18 +10,22 @@ def report_gen():
     os.chdir(Path.home())
     os.chdir("student")
     syslog = open("syslog.log")
-    ips = []
+
+    ips = set()
+    count = {}
+    ip_pattern = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b')#match IPs
+
     for line in syslog:
-        part = line.split(" ")
-        matching = re.findall(r"(?:\d{1,3}\.){3}\d{1,3}",line)
-        if matching not in ips:
-            ips+= matching
-        elif matching in ips:
+        matching = ip_pattern.findall(line)#find all IPs in line
+        if len(matching) == 0:
             continue
+        for ip in matching:#add all ips found in the line into a stored set and dictionary
+            ips.add(ip)
+            count[ip] = count.get(ip,0) + 1
 
-    syslog.close()
+    syslog.close()  
 
-    print(ips)
+    print(count)
 
 def main():
     os.system("clear")
