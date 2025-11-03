@@ -6,7 +6,8 @@ from pathlib import Path
 #from geoip import geolite2 
 
 def report_gen():
-    os.chdir(Path.home()+"/student")
+    os.chdir(Path.home())
+    os.chdir("/student")
     stdoutput = subprocess.run(["pwd"],text=True,capture_output=True)
     print(stdoutput)
 
