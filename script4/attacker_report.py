@@ -24,7 +24,7 @@ def report_gen():
     syslog.close()  
 
     #searches for the country associated with the ip
-    for ip in 
+    #for ip in 
 
     #format report
     print("COUNT","\t\tIP ADDRESS","\tCOUNTRY")
