@@ -1,9 +1,8 @@
 #Name:Zifeng Li
 #11/03/2025
-import os,subprocess,pathlib,re
+import os,subprocess,pathlib,re,geoip
 from pathlib import Path
-#,geoip
-#from geoip import geolite2 
+from geoip import geolite2 
 
 def report_gen():
     #locates and opens the syslog file
@@ -24,8 +23,12 @@ def report_gen():
             count[ip] = count.get(ip,0) + 1
     syslog.close()  
 
+    #searches for the country associated with the ip
+    for ip in 
+
+    #format report
     print("COUNT","\t\tIP ADDRESS","\tCOUNTRY")
-    for counter,ip in count.items():
+    for ip,counter in count.items():
         print(counter,'\t',ip)
 
 def main():
